@@ -14,11 +14,6 @@ function KeyVisual() {
   useGSAP(
     () => {
       gsap.from(".kv__image", { duration: 0.8, opacity: 0, stagger: 0.4 });
-      // .fromTo(".tripcometrue", { opacity: 0 }, { opacity: 1 })
-      // .fromTo(".langchat", { opacity: 0 }, { opacity: 1 })
-      // .fromTo(".doctors365", { opacity: 0 }, { opacity: 1 })
-      // .fromTo(".netflix", { opacity: 0 }, { opacity: 1 })
-      // .fromTo(".samas", { opacity: 0 }, { opacity: 1 });
 
       tl.current = gsap
         .timeline({

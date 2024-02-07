@@ -5,22 +5,30 @@ import { TypographyProps } from "./Typography.types";
 const pxtorem = (px: number) => `${px / 16}rem`;
 
 function Typography({
+  tag,
   align,
   color,
   lineHeight,
   fontSize,
   fontWeight,
+  mt,
+  mb,
   children,
   ...rest
 }: PropsWithChildren<TypographyProps>) {
-  const rem = pxtorem(fontSize ?? 16);
+  const fz = pxtorem(fontSize ?? 16);
+  const mtrem = pxtorem(mt ?? 0);
+  const mbrem = pxtorem(mb ?? 0);
   return (
     <Styled.Text
+      as={tag}
       $align={align}
       $color={color}
       $lineHeight={`${lineHeight}`}
-      $fontSize={rem}
+      $fontSize={fz}
       $fontWeight={fontWeight}
+      $mt={mtrem}
+      $mb={mbrem}
       {...rest}
     >
       {children}
@@ -34,11 +42,22 @@ function H2({
   align,
   color,
   fontWeight,
+  mt,
+  mb,
   children,
   ...rest
 }: PropsWithChildren<TypographyProps>) {
+  const mtrem = pxtorem(mt ?? 0);
+  const mbrem = pxtorem(mb ?? 0);
   return (
-    <Styled.H2 $align={align} $color={color} $fontWeight={fontWeight} {...rest}>
+    <Styled.H2
+      $align={align}
+      $color={color}
+      $fontWeight={fontWeight}
+      $mt={mtrem}
+      $mb={mbrem}
+      {...rest}
+    >
       {children}
     </Styled.H2>
   );
@@ -48,11 +67,22 @@ function H3({
   align,
   color,
   fontWeight,
+  mt,
+  mb,
   children,
   ...rest
 }: PropsWithChildren<TypographyProps>) {
+  const mtrem = pxtorem(mt ?? 0);
+  const mbrem = pxtorem(mb ?? 0);
   return (
-    <Styled.H3 $align={align} $color={color} $fontWeight={fontWeight} {...rest}>
+    <Styled.H3
+      $align={align}
+      $color={color}
+      $fontWeight={fontWeight}
+      $mt={mtrem}
+      $mb={mbrem}
+      {...rest}
+    >
       {children}
     </Styled.H3>
   );
