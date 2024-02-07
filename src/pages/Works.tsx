@@ -23,6 +23,9 @@ function Works() {
       setDetail(undefined);
       document.body.classList.remove("modal-open");
     }
+    return () => {
+      document.body.classList.remove("modal-open");
+    };
   }, [data, id]);
 
   return (

@@ -1,10 +1,11 @@
 import { useRef } from "react";
-import * as Styled from "./Portfolio.styles";
+import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { PORTFOLIO_DATA } from "@/constants/portfolio";
 import Typography from "@/components/common/Typography";
+import { PORTFOLIO_DATA } from "@/constants/portfolio";
+import * as Styled from "./Portfolio.styles";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -44,18 +45,20 @@ function Portfolio() {
       {PORTFOLIO_DATA.map((item, index) => (
         <Styled.PortfolioItem className="portfolio-item" key={index}>
           <Styled.PortfolioItemBox>
-            <img src={item.image} alt={item.title} />
-            <Styled.PortfolioItemText>
-              <Typography.H3 color="white" align="center">
-                {item.title}
-              </Typography.H3>
-              <Typography color="white" align="center">
-                {item.desc}
-              </Typography>
-              <Typography color="white" align="center">
-                {item.stacks}
-              </Typography>
-            </Styled.PortfolioItemText>
+            <Link to={`/works/${item.link}`}>
+              <img src={item.image} alt={item.title} />
+              <Styled.PortfolioItemText>
+                <Typography.H3 color="white" align="center">
+                  {item.title}
+                </Typography.H3>
+                <Typography color="white" align="center">
+                  {item.desc}
+                </Typography>
+                <Typography color="white" align="center">
+                  {item.stacks}
+                </Typography>
+              </Styled.PortfolioItemText>
+            </Link>
           </Styled.PortfolioItemBox>
         </Styled.PortfolioItem>
       ))}

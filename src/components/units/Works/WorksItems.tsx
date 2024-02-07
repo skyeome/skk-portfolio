@@ -11,7 +11,7 @@ function WorksItems({ data, isLoading }: WorksItemsProps) {
     <Styled.WorksListWrap>
       <Styled.WorksList>
         {data?.map((portfolio) => (
-          <Styled.WorksListItem className="md" key={portfolio.name}>
+          <Styled.WorksListItem className={portfolio.size} key={portfolio.name}>
             <motion.div layoutId={portfolio.name}>
               <Styled.WorksListThumb className="thumbnail">
                 <img src={portfolio.image} alt={portfolio.name} />
