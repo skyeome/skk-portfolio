@@ -2,7 +2,19 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
+    <meta name="theme-color" content="#131313" />
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <link
+      rel="alternate icon"
+      href="icons/favicon.ico"
+      type="ico"
+      sizes="32x32"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="icons/apple-icon-152x152.png"
+      sizes="152x152"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -10,10 +22,58 @@
       rel="stylesheet"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="/icons/manifest.json" />
+    <!-- Primary Meta Tags -->
     <title>프론트엔드 개발자 김성겸 포트폴리오</title>
+    <meta name="title" content="프론트엔드 개발자 김성겸 포트폴리오" />
+    <meta
+      name="description"
+      content="궁금하고 관심이 생기는 분야라면 빠르게 도전하고 끊임없이 성장하는 프론트엔드 개발자 입니다."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://skk-portfolio.vercel.app/" />
+    <meta property="og:title" content="프론트엔드 개발자 김성겸 포트폴리오" />
+    <meta
+      property="og:description"
+      content="궁금하고 관심이 생기는 분야라면 빠르게 도전하고 끊임없이 성장하는 프론트엔드 개발자 입니다."
+    />
+    <meta property="og:image" content="/skk-portfolio.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://skk-portfolio.vercel.app/" />
+    <meta
+      property="twitter:title"
+      content="프론트엔드 개발자 김성겸 포트폴리오"
+    />
+    <meta
+      property="twitter:description"
+      content="궁금하고 관심이 생기는 분야라면 빠르게 도전하고 끊임없이 성장하는 프론트엔드 개발자 입니다."
+    />
+    <meta property="twitter:image" content="/skk-portfolio.png" />
+
+    <!-- Meta Tags Generated with https://metatags.io -->
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        // Register a service worker hosted at the root of the
+        // site using the default scope.
+        navigator.serviceWorker
+          .register("/sw.js")
+          .then((registration) => {
+            console.log("Service worker registration succeeded:", registration);
+          })
+          .catch((err) => {
+            console.log("Service worker registration failed:", error);
+          });
+      } else {
+        console.log("Service workers are not supported.");
+      }
+    </script>
   </body>
 </html>
