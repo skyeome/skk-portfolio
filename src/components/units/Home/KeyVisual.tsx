@@ -13,13 +13,28 @@ function KeyVisual() {
 
   useGSAP(
     () => {
+      gsap.from(".kv__image", { duration: 0.8, opacity: 0, stagger: 0.4 });
+      // .fromTo(".tripcometrue", { opacity: 0 }, { opacity: 1 })
+      // .fromTo(".langchat", { opacity: 0 }, { opacity: 1 })
+      // .fromTo(".doctors365", { opacity: 0 }, { opacity: 1 })
+      // .fromTo(".netflix", { opacity: 0 }, { opacity: 1 })
+      // .fromTo(".samas", { opacity: 0 }, { opacity: 1 });
+
       tl.current = gsap
-        .timeline()
-        .fromTo(".tripcometrue", { opacity: 0 }, { opacity: 1 })
-        .fromTo(".langchat", { opacity: 0 }, { opacity: 1 })
-        .fromTo(".doctors365", { opacity: 0 }, { opacity: 1 })
-        .fromTo(".netflix", { opacity: 0 }, { opacity: 1 })
-        .fromTo(".samas", { opacity: 0 }, { opacity: 1 });
+        .timeline({
+          scrollTrigger: {
+            trigger: kv.current,
+            start: "top top",
+            end: "+=100%",
+            scrub: true,
+          },
+        })
+        .to(".kv__title", { y: 50 })
+        .to(".tripcometrue", { y: -50 })
+        .to(".langchat", { y: -30 })
+        .to(".doctors365", { y: 30 })
+        .to(".netflix", { y: -60 })
+        .to(".samas", { y: -30 });
     },
     { scope: kv }
   );
@@ -27,11 +42,11 @@ function KeyVisual() {
   return (
     <Styled.KeyVisualBox ref={kv}>
       {KEY_VISUALS.map((item, index) => (
-        <Styled.KeyVisualItem key={index} className={item.name}>
+        <Styled.KeyVisualItem key={index} className={`kv__image ${item.name}`}>
           <img src={item.src} alt={item.alt} />
         </Styled.KeyVisualItem>
       ))}
-      <Styled.KeyVisualTitle>
+      <Styled.KeyVisualTitle className="kv__title">
         <h2>
           SKyome’s <b>works</b>
         </h2>
