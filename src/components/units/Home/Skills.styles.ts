@@ -1,10 +1,14 @@
 import styled from "styled-components";
+import device from "@/styles/media";
 
 export const SkillsWrap = styled.div`
   width: 100%;
   max-width: 984px;
   margin: 0 auto 5rem;
   padding: 0 20px;
+  @media ${device.phone} {
+    padding: 0;
+  }
 `;
 
 export const SkillsBox = styled.div`
@@ -31,9 +35,15 @@ export const SkillsTitleBar = styled.span`
 `;
 
 export const SkillsList = styled.ul`
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 1.3;
   li {
     margin-bottom: 2.25rem;
+  }
+  @media ${device.phone} {
+    font-size: 1.125rem;
+  }
+  @media ${device.tablet} {
+    font-size: 1.25rem;
   }
 `;

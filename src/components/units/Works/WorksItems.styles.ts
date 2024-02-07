@@ -1,3 +1,4 @@
+import device from "@/styles/media";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
@@ -34,6 +35,19 @@ export const WorksListItem = styled(motion.li)`
     .thumbnail {
       aspect-ratio: 2;
     }
+  }
+  @media ${device.phone} {
+    margin-bottom: 4rem;
+    &.sm,
+    &.md,
+    &.lg {
+      width: 100%;
+      .thumbnail {
+        aspect-ratio: 4/3;
+      }
+    }
+  }
+  @media ${device.tablet} {
   }
 `;
 

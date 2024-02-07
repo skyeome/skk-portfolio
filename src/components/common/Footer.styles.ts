@@ -1,3 +1,4 @@
+import device from "@/styles/media";
 import styled from "styled-components";
 
 export const FooterWrap = styled.footer`
@@ -20,6 +21,7 @@ export const FooterLinks = styled.ul`
   max-width: 1280px;
   margin: 0 auto;
   padding: 20px;
+  box-sizing: border-box;
 
   li {
     width: 31.25%;
@@ -41,6 +43,25 @@ export const FooterLinks = styled.ul`
 
       img {
         width: 3.75rem;
+      }
+    }
+  }
+  @media ${device.tablet} {
+    flex-direction: column;
+    gap: 1rem;
+
+    li {
+      width: 100%;
+      font-size: 1.25rem;
+
+      border-radius: 1.25rem;
+      a {
+        gap: 0.625rem;
+        padding: 6% 2%;
+
+        img {
+          width: 3.75rem;
+        }
       }
     }
   }

@@ -1,9 +1,13 @@
 import styled, { css } from "styled-components";
+import device from "@/styles/media";
 
 export const KeyVisualBox = styled.div`
   position: relative;
   aspect-ratio: 1.575;
   overflow: hidden;
+  @media ${device.phone} {
+    aspect-ratio: 3/4;
+  }
 `;
 
 const kvitem = css`
@@ -57,6 +61,40 @@ export const KeyVisualItem = styled.div`
     width: 30%;
     aspect-ratio: 1.08;
   }
+  @media ${device.phone} {
+    &.tripcometrue {
+      top: 6%;
+      left: 15.5%;
+
+      width: 35%;
+    }
+    &.langchat {
+      top: 2%;
+      left: 62%;
+
+      width: 34%;
+    }
+    &.doctors365 {
+      top: 60%;
+      left: -4%;
+
+      width: 32%;
+      aspect-ratio: 3/4;
+    }
+    &.netflix {
+      top: 70%;
+      left: 36%;
+
+      width: 30%;
+      aspect-ratio: 3/4;
+    }
+    &.samas {
+      top: 56%;
+      left: 74%;
+
+      width: 40%;
+    }
+  }
 `;
 
 export const KeyVisualTitle = styled.div`
@@ -77,5 +115,15 @@ export const KeyVisualTitle = styled.div`
   }
   p {
     font-size: 1.5rem;
+  }
+  @media ${device.phone} {
+    width: 100%;
+    h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.25rem;
+    }
   }
 `;

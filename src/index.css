@@ -147,6 +147,22 @@ body.modal-open {
 .App {
   padding-top: 84px;
 }
+
+@media (max-width: 600px) {
+  body,
+  html {
+    font-size: 12px;
+  }
+  .App {
+    padding-top: 66px;
+  }
+}
+@media (max-width: 768px) {
+  body,
+  html {
+    font-size: 14px;
+  }
+}
 /* body {
   margin: 0;
   display: flex;

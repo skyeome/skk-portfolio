@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { TypographyStyledProps } from "./Typography.types";
+import device from "@/styles/media";
 
 const lh13 = css`
   line-height: 1.3;
@@ -20,7 +21,7 @@ export const Text = styled.p<TypographyStyledProps>`
 `;
 
 export const H2 = styled.h2<TypographyStyledProps>`
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: ${({ $fontWeight }) => $fontWeight};
   ${lh13};
   color: ${({ $color }) =>
@@ -28,10 +29,16 @@ export const H2 = styled.h2<TypographyStyledProps>`
   text-align: ${({ $align }) => $align || "left"};
   margin-top: ${({ $mt }) => $mt};
   margin-bottom: ${({ $mb }) => $mb};
+  @media ${device.phone} {
+    font-size: 1.25rem;
+  }
+  @media ${device.tablet} {
+    font-size: 1.75rem;
+  }
 `;
 
 export const H3 = styled.h3<TypographyStyledProps>`
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: ${({ $fontWeight }) => $fontWeight};
   ${lh13};
   color: ${({ $color }) =>
@@ -39,4 +46,10 @@ export const H3 = styled.h3<TypographyStyledProps>`
   text-align: ${({ $align }) => $align || "left"};
   margin-top: ${({ $mt }) => $mt};
   margin-bottom: ${({ $mb }) => $mb};
+  @media ${device.phone} {
+    font-size: 1.125rem;
+  }
+  @media ${device.tablet} {
+    font-size: 1.25rem;
+  }
 `;

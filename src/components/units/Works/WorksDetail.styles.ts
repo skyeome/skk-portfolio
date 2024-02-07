@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import { WorksModalProps } from "./WorksDetail.types";
+import device from "@/styles/media";
 
 export const WorkDetailModalDim = styled.div<WorksModalProps>`
   position: fixed;
@@ -41,6 +42,11 @@ export const WorkDetailModalBox = styled(motion.div)`
   .desc {
     padding: 2.5rem;
   }
+  @media ${device.tablet} {
+    max-width: none;
+    height: 100vh;
+    border-radius: 0;
+  }
 `;
 
 export const WorkDetailThumb = styled(motion.div)`
@@ -53,6 +59,9 @@ export const WorkDetailThumb = styled(motion.div)`
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+  @media ${device.tablet} {
+    border-radius: 0;
   }
 `;
 

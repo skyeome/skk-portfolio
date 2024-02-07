@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import logo from "@/assets/SKyome-logo.png";
 import logoW from "@/assets/SKyome-logo-w.png";
+import device from "@/styles/media";
 
 export const NavigationWrap = styled.div`
   position: fixed;
@@ -9,8 +10,11 @@ export const NavigationWrap = styled.div`
   right: 0;
 
   padding: 20px 40px;
-
   z-index: 10;
+
+  @media ${device.phone} {
+    padding: 1.1rem;
+  }
 `;
 
 export const NavigationInner = styled.div`
@@ -26,6 +30,13 @@ const logoCss = css`
     width: 139px;
     height: 44px;
   }
+  @media ${device.phone} {
+    & a {
+      width: 8rem;
+      height: auto;
+      aspect-ratio: 3.16;
+    }
+  }
 `;
 
 export const LogoBlack = styled.h1`
@@ -34,6 +45,11 @@ export const LogoBlack = styled.h1`
 
   & a {
     background: url(${logo}) 0 0/100% no-repeat;
+  }
+  @media ${device.phone} {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3.16;
   }
 `;
 
@@ -47,7 +63,7 @@ export const LogoWhite = styled.h1`
 
 export const NavList = styled.nav`
   flex: 3;
-  font-size: 24px;
+  font-size: 1.5rem;
 
   & ul {
     display: flex;
@@ -58,6 +74,15 @@ export const NavList = styled.nav`
     display: flex;
     a {
       margin: 0 10px;
+    }
+  }
+  @media ${device.phone} {
+    font-size: 1.25rem;
+    & ul {
+      justify-content: space-evenly;
+    }
+    & .contacts {
+      display: none;
     }
   }
 `;
