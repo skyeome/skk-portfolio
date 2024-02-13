@@ -1,11 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { IoArrowForward } from "react-icons/io5";
 import Typography from "@/components/common/Typography";
 import { WorksItemsProps } from "./WorksItems.types";
 import * as Styled from "./WorksItems.styles";
+import { useEffect } from "react";
 
 function WorksItems({ data, isLoading }: WorksItemsProps) {
+  const [searchParams] = useSearchParams();
+  const pos = searchParams.get("position");
+  useEffect(() => {
+    if (pos) window.scrollTo(0, 0);
+  }, [pos]);
+
   if (isLoading) return null;
   return (
     <Styled.WorksListWrap>

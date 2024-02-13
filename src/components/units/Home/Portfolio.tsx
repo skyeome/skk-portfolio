@@ -45,7 +45,7 @@ function Portfolio() {
       {PORTFOLIO_DATA.map((item, index) => (
         <Styled.PortfolioItem className="portfolio-item" key={index}>
           <Styled.PortfolioItemBox>
-            <Link to={`/works/${item.link}`}>
+            <Link to={`/works/${item.link}?position=top`}>
               <img src={item.image} alt={item.title} />
               <Styled.PortfolioItemText>
                 <Typography.H3 color="white" align="center">
