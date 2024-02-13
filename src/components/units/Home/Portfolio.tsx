@@ -4,12 +4,12 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Typography from "@/components/common/Typography";
-import { PORTFOLIO_DATA } from "@/constants/portfolio";
+import { PortfolioProps } from "./Portfolio.types";
 import * as Styled from "./Portfolio.styles";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-function Portfolio() {
+function Portfolio({ data }: PortfolioProps) {
   const pf = useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -38,14 +38,14 @@ function Portfolio() {
           );
       });
     },
-    { scope: pf }
+    { dependencies: [data], scope: pf }
   );
   return (
     <Styled.PortfolioBox ref={pf}>
-      {PORTFOLIO_DATA.map((item, index) => (
+      {data?.map((item, index) => (
         <Styled.PortfolioItem className="portfolio-item" key={index}>
           <Styled.PortfolioItemBox>
-            <Link to={`/works/${item.link}?position=top`}>
+            <Link to={`/works/${item.name}?position=top`}>
               <img src={item.image} alt={item.title} />
               <Styled.PortfolioItemText>
                 <Typography.H3 color="white" align="center">
@@ -55,7 +55,7 @@ function Portfolio() {
                   {item.desc}
                 </Typography>
                 <Typography color="white" align="center">
-                  {item.stacks}
+                  {item.stacks.join(", ")}
                 </Typography>
               </Styled.PortfolioItemText>
             </Link>
