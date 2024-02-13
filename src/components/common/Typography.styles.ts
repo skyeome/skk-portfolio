@@ -9,7 +9,8 @@ const lh13 = css`
 export const Text = styled.p<TypographyStyledProps>`
   font-size: ${({ $fontSize }) => $fontSize};
   font-weight: ${({ $fontWeight }) => $fontWeight};
-  line-height: ${({ $lineHeight }) => $lineHeight || 1.5};
+  line-height: ${({ $lineHeight }) =>
+    $lineHeight === "undefined" ? 1.5 : $lineHeight};
   color: ${({ $color }) =>
     $color === "white" ? "#fff" : $color === "gray" ? "#707070" : "#131313"};
   text-align: ${({ $align }) => $align || "left"};

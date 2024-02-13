@@ -1,11 +1,17 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import device from "@/styles/media";
 
-export const SkillsWrap = styled.div`
+export const wrapCss = css`
   width: 100%;
   max-width: 984px;
-  margin: 0 auto 5rem;
+  margin: 0 auto;
   padding: 0 20px;
+  box-sizing: border-box;
+`;
+
+export const SkillsWrap = styled.div`
+  ${wrapCss};
+  margin-bottom: 5rem;
   @media ${device.phone} {
     padding: 0;
   }

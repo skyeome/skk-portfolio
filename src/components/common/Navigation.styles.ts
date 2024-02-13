@@ -76,6 +76,21 @@ export const NavList = styled.nav`
       margin: 0 10px;
     }
   }
+  & li.active {
+    position: relative;
+  }
+  & li.active::after {
+    content: "";
+    position: absolute;
+    top: 2rem;
+    left: 48%;
+
+    width: 0.375rem;
+    height: 0.375rem;
+    border-radius: 100%;
+
+    background-color: #131313;
+  }
   @media ${device.phone} {
     font-size: 1.25rem;
     & ul {

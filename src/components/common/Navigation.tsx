@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import * as Styled from "./Navigation.styles";
 import githubLogo from "@/assets/github-logo.svg";
 import velogLogo from "@/assets/velog-logo.svg";
 
 function Navigation() {
+  const { pathname } = useLocation();
+
   return (
     <Styled.NavigationWrap>
       <Styled.NavigationInner>
@@ -12,10 +14,14 @@ function Navigation() {
         </Styled.LogoBlack>
         <Styled.NavList>
           <ul>
-            <li>
+            <li
+              className={pathname.startsWith("/about") ? "active" : undefined}
+            >
               <Link to="/about">About</Link>
             </li>
-            <li>
+            <li
+              className={pathname.startsWith("/works") ? "active" : undefined}
+            >
               <Link to="/works">Works</Link>
             </li>
             <li className="contacts">
