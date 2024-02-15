@@ -27,7 +27,7 @@ function KeyVisual() {
         .to(".kv__title", { y: 50 })
         .to(".tripcometrue", { y: -50 })
         .to(".langchat", { y: -30 })
-        .to(".doctors365", { y: 30 })
+        .to(".skk-blog", { y: 30 })
         .to(".netflix", { y: -60 })
         .to(".samas", { y: -30 });
     },

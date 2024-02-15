@@ -43,14 +43,14 @@ export const PortfolioItemText = styled.div`
 
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 1.25rem;
 
-  padding: 2rem 0 0;
-  height: 33.3334%;
+  height: 100%;
   background: linear-gradient(
     0deg,
-    rgba(19, 19, 19, 0.7),
-    rgba(19, 19, 19, 0.3)
+    rgba(19, 19, 19, 0.5),
+    rgba(19, 19, 19, 0.5)
   );
 
   color: #fff;

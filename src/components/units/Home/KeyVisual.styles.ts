@@ -40,7 +40,7 @@ export const KeyVisualItem = styled.div`
     width: 30%;
     aspect-ratio: 1;
   }
-  &.doctors365 {
+  &.skk-blog {
     top: 60%;
     left: 0;
 
@@ -74,7 +74,7 @@ export const KeyVisualItem = styled.div`
 
       width: 34%;
     }
-    &.doctors365 {
+    &.skk-blog {
       top: 60%;
       left: -4%;
 

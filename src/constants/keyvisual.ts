@@ -16,9 +16,9 @@ export const KEY_VISUALS: KeyVisual[] = [
     name: "langchat",
   },
   {
-    src: "/doctors365-pc.jpg",
-    alt: "doctors365",
-    name: "doctors365",
+    src: "https://firebasestorage.googleapis.com/v0/b/skk-portfolio.appspot.com/o/Free-iMac-Mockup.jpg?alt=media&token=27232d0b-a538-48ae-aaa3-4aa0e4f4834e",
+    alt: "skk-blog",
+    name: "skk-blog",
   },
   {
     src: "/netflix-clone-app-detail01.jpg",
